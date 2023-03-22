@@ -8,6 +8,12 @@ Player *Restaurant::getPlayer() { return player; }
 void Restaurant::setPlayer(Player *player) { this->player = player; }
 
 Restaurant::Restaurant() {
+    ofImage decoSheet;
+    decoSheet.load("images/sprite.png"); // allows us to use cropFrom function with the decorations available in sprite.png
+    chair.cropFrom(decoSheet, 100, 10, 50, 40); // chair
+    table.cropFrom(decoSheet, 5, 10, 100, 100); // table
+    door.cropFrom(decoSheet, 70, 70, 40, 110); //door
+    
     floor.load("images/floor.jpg");
     entityManager = new EntityManager();
     ofImage chefPlayerImage;
@@ -101,6 +107,18 @@ void Restaurant::generateClient(){
 }
 void Restaurant::render() {
     floor.draw(0,0, ofGetWidth(), ofGetHeight());
+    int Ydistance = 0; // Used to seperate the two rows of chairs and tables
+    for (int j = 0; j < 2; j++){ // Draws two rows of chairs and tables
+        int Xdistance = 0; // Used to seperate the sets of chairs and tables in each row
+        for (int i = 0; i < 5; i++){ // Draws 5 sets of one table and two chairs in each row
+            chair.draw(175 + Xdistance, 75 + Ydistance, 50, 45); // top chair
+            table.draw(150 + Xdistance, 93 + Ydistance, 100, 100); // table
+            chair.draw(175 + Xdistance, 160 + Ydistance, 50, 45); // bottom chair
+            Xdistance += 125; // Makes it so each set of chairs and tables in each row have a distance of 125 between them
+        }
+        Ydistance += 175; // Makes it so the rows have a distance of 175 between them
+    }
+    door.draw(0, -65, 70, 150); // door
     player->render();
     entityManager->render();
     ofSetColor(0, 100, 0);

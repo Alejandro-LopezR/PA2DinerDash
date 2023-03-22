@@ -27,6 +27,9 @@ class Restaurant {
         Item* botBread;
         Item* topBread;
         ofImage floor;
+        ofImage table; //Used for drawing tables
+        ofImage chair; //Used for drawing chairs
+        ofImage door; // Used for drawing door
         void initItems();
         void initCounters();
         void initClients();

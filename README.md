@@ -14,6 +14,9 @@ This project has a lot of classes and OOP concepts in it, so make sure to study 
 # Student Info
 Please fill out the information below for each member of the team:
 
-### [ STUDENT A NAME : STUDENT A EMAIL ]
+### [ Alejandro E. López Rodríguez : alejandro.lopez24@upr.com ]
 
-### [ STUDENT B NAME : STUDENT B EMAIL ]
+### [ Carlos A. Ferrer Hayes : carlos.ferrer5@upr.com ]
+
+# Decorations
+Door, multiple chairs, and multiple tables.
