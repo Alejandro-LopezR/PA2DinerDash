@@ -5,6 +5,10 @@ GameState::GameState() {
 }
 void GameState::tick() {
 	restaurant->tick();
+	if (restaurant->ofGetLoseCounter() >= 10) {
+		setFinished(true);
+		setNextState("Lose");
+	}
 }
 void GameState::render() {
 	restaurant->render();
