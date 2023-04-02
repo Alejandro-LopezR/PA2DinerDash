@@ -1,5 +1,8 @@
+#pragma once
+
 #include "State.h"
 #include "Restaurant.h"
+#include "EntityManager.h"
 
 class GameState: public State{
     public: 
@@ -9,8 +12,9 @@ class GameState: public State{
 		void render();
 		void keyPressed(int key);
 		void mousePressed(int x, int y, int button);
-		void keyReleased(int key);
-	
+		void keyReleased(int key);	
 	private:
 		Restaurant *restaurant;
+		EntityManager* entityManager;
+
 };

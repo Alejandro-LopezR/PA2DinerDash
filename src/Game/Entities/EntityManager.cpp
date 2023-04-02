@@ -1,5 +1,4 @@
 #include "EntityManager.h"
-
 void EntityManager::tick(){
     for(unsigned int i=0; i<entities.size(); i++){
         entities[0]->tick();
@@ -27,6 +26,7 @@ void EntityManager::removeLeavingClients(){
                 delete tempClient;
                 tempClient = prevClient->nextClient;
             }
+            loseCounter++;
         }else{
             prevClient = tempClient;
             tempClient = tempClient->nextClient;
