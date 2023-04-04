@@ -18,6 +18,7 @@ class Restaurant {
 
     public:
         Restaurant();
+        int ofGetMoney() {return money;}
         int ofGetLoseCounter() {return entityManager->ofGetLoseNum();}
         Player* getPlayer();
         void setPlayer(Player *player);

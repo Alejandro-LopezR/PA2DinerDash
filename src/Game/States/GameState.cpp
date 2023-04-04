@@ -9,6 +9,10 @@ void GameState::tick() {
 		setFinished(true);
 		setNextState("Lose");
 	}
+	if (restaurant->ofGetMoney() >= 100){
+		setFinished(true);
+		setNextState("Win");
+	}
 }
 void GameState::render() {
 	restaurant->render();
