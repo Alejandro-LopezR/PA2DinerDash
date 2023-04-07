@@ -14,6 +14,7 @@ class Client: public Entity{
         int serve(Burger*);
         Client* nextClient=nullptr;
         bool isLeaving=false;
+        Burger* getBurger() {return burger;} // returns the first Client's burger, used in equals() method
 
 
 

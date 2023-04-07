@@ -19,4 +19,7 @@ class Burger {
     void setY(int y) {
         this->y = y;
     }
+    vector<Item *> getIngredients() {return ingredients;} // returns vector list of ingredients, used in equals() method
+    bool equals(Burger* playerBurger); // equals method declaration
+    bool isEqual = false; // used in equals method
 };
