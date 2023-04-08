@@ -98,10 +98,18 @@ void Restaurant::tick() {
 void Restaurant::generateClient(){
     Burger* b = new Burger(72, 100, 50, 25);
     b->addIngredient(botBread);
-    b->addIngredient(burger);
-    b->addIngredient(cheese);
-    b->addIngredient(tomato);
-    b->addIngredient(lettuce);
+    burgIngs.push_back(cheese); // Specifically exludes top bun and bottom bun from burgIngs
+    burgIngs.push_back(lettuce);
+    burgIngs.push_back(tomato);
+    burgIngs.push_back(burger);
+    float limit = round(ofRandom(1,3)); // chooses random number between 1 and 3
+    for (int i = 0; i < limit; i++){ // tells us how many ingredients will be added (1 through 3)
+        float randPos = round(ofRandom(0,3)); // chooses random number between 0 and 3 which correlates to vector list position values
+        for (int j = randPos; j < 4; j++){ // chooses random ingredient from burgIngs (chhese, lettuce, tomato, or burger)
+            b->addIngredient(burgIngs[j]);
+            break;
+        }
+    }
     b->addIngredient(topBread);
     entityManager->addClient(new Client(0, 50, 64, 72,people[ofRandom(8)], b));
 }

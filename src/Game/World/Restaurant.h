@@ -29,6 +29,7 @@ class Restaurant {
         Item* burger;
         Item* botBread;
         Item* topBread;
+        vector <Item *> burgIngs; // Used for adding random ingredients
         ofImage floor;
         ofImage table; //Used for drawing tables
         ofImage chair; //Used for drawing chairs
