@@ -6,7 +6,7 @@
 class Player: public Entity{
 
     private:
-        int speed = 5;
+        int speed = 0;
         string facing = "right";
         Animation *chefAnim;
         Burger *burger;
