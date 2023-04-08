@@ -137,4 +137,7 @@ void Restaurant::keyPressed(int key) {
             serveClient();
         }
     }
+    if (key == 'u'){
+        player->getBurger()->removeIngredient();
+    }
 }

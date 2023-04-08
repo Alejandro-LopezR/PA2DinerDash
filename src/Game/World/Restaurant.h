@@ -8,6 +8,7 @@
 #include "Player.h"
 #include "ofMain.h"
 
+
 class Restaurant {
     private:
         Player* player;
