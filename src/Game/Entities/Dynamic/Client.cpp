@@ -33,5 +33,25 @@ void Client::tick(){
 
 int Client::serve(Burger* burger){
     isLeaving = true;
-    return 10;
+    for (int i = 0; i < (int)burger->getIngredients().size(); i++){
+        if (burger->getIngredients()[i]->getName() == "cheese") { // adds 3 dollars if cheese is added to burger
+            price += 3;
+        }
+        if (burger->getIngredients()[i]->getName() == "lettuce") { // adds 2 dollars if lettuce is added
+            price += 2;
+        }
+        if (burger->getIngredients()[i]->getName() == "tomato") { // adds 2 dollars if tomato is added
+            price += 2;
+        }
+        if (burger->getIngredients()[i]->getName() == "patty") { // adds 4 dollars if patty is added
+            price += 4;
+        }
+        if (burger->getIngredients()[i]->getName() == "topBun") { // adds 1 dollar if top bun is added
+            price += 1;
+        }
+        if (burger->getIngredients()[i]->getName() == "bottomBun") { // adds 1 dollar if bottom bun is added
+            price += 1;
+        }
+    }
+    return price; // returns final added price
 }
