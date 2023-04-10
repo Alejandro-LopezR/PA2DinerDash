@@ -1,6 +1,5 @@
 #include "Entity.h"
 #include "Burger.h"
-
 class Client: public Entity{
     private:
         Burger* burger;

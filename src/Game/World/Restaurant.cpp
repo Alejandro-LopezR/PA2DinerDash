@@ -141,8 +141,9 @@ void Restaurant::serveClient(){
 void Restaurant::keyPressed(int key) {
     player->keyPressed(key);
     if(key == 's'){
-        if (entityManager->firstClient->getBurger()->equals(player->getBurger())){ // application of equals method to see if target burger is the same as parameter burger
-            serveClient();
+        serveClient();
+        for (int i = 0; i < 5; i++) {
+            player->getBurger()->removeIngredient();
         }
     }
     if (key == 'u'){
