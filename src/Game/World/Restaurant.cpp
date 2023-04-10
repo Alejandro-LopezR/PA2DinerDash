@@ -142,9 +142,7 @@ void Restaurant::keyPressed(int key) {
     player->keyPressed(key);
     if(key == 's'){
         serveClient();
-        for (int i = 0; i < 5; i++) {
-            player->getBurger()->removeIngredient();
-        }
+        player->getBurger()->clear();
     }
     if (key == 'u'){
         player->getBurger()->removeIngredient();

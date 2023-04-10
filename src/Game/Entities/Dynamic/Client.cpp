@@ -57,7 +57,7 @@ int Client::serve(Burger* burger){
         return price; // returns final added price
     }
     else if(this->nextClient != nullptr){
-        this->nextClient->serve(burger);
+        return this->nextClient->serve(burger);
     }
     return price = 0;
 }

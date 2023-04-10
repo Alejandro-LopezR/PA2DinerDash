@@ -30,7 +30,7 @@ void Burger::render(){
 }
 
 void Burger::clear(){
-    ingredients.empty();
+    ingredients.clear();
 }
 
 bool Burger::equals(Burger* playerBurger){
