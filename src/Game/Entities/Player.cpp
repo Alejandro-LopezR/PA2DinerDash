@@ -47,6 +47,10 @@ void Player::keyPressed(int key){
             Item* item = ac->getItem();
             if(item != nullptr){
                 burger->addIngredient(item);
+                inFrontOf = true;
+            }
+            else {
+                inFrontOf = false;
             }
         }
     }

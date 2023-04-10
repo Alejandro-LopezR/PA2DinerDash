@@ -11,6 +11,7 @@ class Player: public Entity{
         Animation *chefAnim;
         Burger *burger;
         EntityManager* entityManager;
+        bool inFrontOf = false;
     public:
         Player(int x, int y, int width, int height, ofImage sprite, EntityManager* em);
         void tick();
@@ -19,6 +20,7 @@ class Player: public Entity{
         void keyReleased(int);
         void mousePressed(int, int, int);
         void setFacing(string);
+        bool getInFrontOf() {return inFrontOf;}
         BaseCounter* getActiveCounter();
         Burger* getBurger(){ return burger;
         }

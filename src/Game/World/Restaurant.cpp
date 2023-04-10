@@ -148,4 +148,9 @@ void Restaurant::keyPressed(int key) {
     if (key == 'u'){
         player->getBurger()->removeIngredient();
     }
+    if (key == 'e'){
+        if (player->getInFrontOf() == true) {
+            money -= 1;
+        }
+    }
 }
