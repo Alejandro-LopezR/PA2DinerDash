@@ -19,7 +19,12 @@ void MenuState::render() {
 	ofDrawBitmapString("Press 'e' to pick up ingredients when in front of the counter", ofGetWidth()/2 - e.length()*3.5, ofGetHeight()/2);
 	string s = "Press 's' to serve client";
 	ofDrawBitmapString("Press 's' to serve client", ofGetWidth()/2 - s.length()*3.5, ofGetHeight()/2 + 25);
-
+	string u = "Press 'u' to undo";
+	ofDrawBitmapString("Press 'u' to undo", ofGetWidth()/2 - s.length()*3.5, ofGetHeight()/2 + 50);
+	string left  = "Press 'left arrow' to move left";
+	ofDrawBitmapString("Press 'left' to move left", ofGetWidth()/2 - s.length()*3.5, ofGetHeight()/2 + 75);
+	string right = "Press 'right arrow' to serve client";
+	ofDrawBitmapString("Press 'right' to move right", ofGetWidth()/2 - s.length()*3.5, ofGetHeight()/2 + 100);
 
 }
 

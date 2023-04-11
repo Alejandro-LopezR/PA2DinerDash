@@ -1,6 +1,6 @@
 #include "WinState.h"
 #include "State.h"
-
+// copied menu state structure with neccesary changes
 WinState::WinState() {
     Win.load("images/Win.jpg");
 }

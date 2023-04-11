@@ -32,8 +32,8 @@ void Client::tick(){
 }
 
 int Client::serve(Burger* burger){
-    if (this->getBurger()->equals(burger)) {
-        isLeaving = true;
+    if (this->getBurger()->equals(burger)) { //checks if the player's burger is the same as any of the clients'
+        isLeaving = true; 
         for (int i = 0; i < (int)burger->getIngredients().size(); i++){
             if (burger->getIngredients()[i]->getName() == "cheese") { // adds 3 dollars if cheese is added to burger
                 price += 3;
@@ -56,8 +56,8 @@ int Client::serve(Burger* burger){
         }
         return price; // returns final added price
     }
-    else if(this->nextClient != nullptr){
-        return this->nextClient->serve(burger);
+    else if(this->nextClient != nullptr){ //checks if there is a next client
+        return this->nextClient->serve(burger); // recursively goes through all of the clients until it finds one with a matching burger
     }
-    return price = 0;
+    return price = 0; // null return if no matching burger is found
 }

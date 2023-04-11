@@ -1,5 +1,5 @@
 #pragma once
-
+// copied menu state structure
 #include "State.h"
 
 
@@ -13,5 +13,5 @@ class WinState: public State{
 		void mousePressed(int x, int y, int button);
 		void keyReleased(int key);
 
-        ofImage Win;
+        ofImage Win; // when win state activated shows this image
 };

@@ -15,7 +15,7 @@ void Burger::addIngredient(Item *item) {
     ingredients.push_back(item);
 }
 
-void Burger::removeIngredient() {
+void Burger::removeIngredient() { // used in undo
     if (!ingredients.empty()) {
         ingredients.pop_back();
     }
@@ -30,7 +30,7 @@ void Burger::render(){
 }
 
 void Burger::clear(){
-    ingredients.clear();
+    ingredients.clear(); // changed from .empty() to .clear() so it works :)
 }
 
 bool Burger::equals(Burger* playerBurger){

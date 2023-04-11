@@ -7,7 +7,7 @@
 class Player: public Entity{
 
     private:
-        int speed = 0;
+        int speed = 0; // default speed when not moving
         string facing = "right";
         Animation *chefAnim;
         Burger *burger;

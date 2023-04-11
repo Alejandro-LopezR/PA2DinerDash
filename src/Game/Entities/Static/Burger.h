@@ -14,7 +14,7 @@ class Burger {
   public:
     Burger(int, int, int, int);
     void addIngredient(Item *item);
-    void removeIngredient();
+    void removeIngredient(); // declaration of method used in undo
     void render();
     void clear();
     void setY(int y) {

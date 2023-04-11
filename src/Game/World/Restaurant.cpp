@@ -100,7 +100,7 @@ void Restaurant::tick() {
 void Restaurant::generateClient(){
     Burger* b = new Burger(72, 100, 50, 25);
     b->addIngredient(botBread);
-    burgIngs.push_back(cheese); // Specifically exludes top bun and bottom bun from burgIngs
+    burgIngs.push_back(cheese); // Specifically excludes top bun and bottom bun from burgIngs
     burgIngs.push_back(lettuce);
     burgIngs.push_back(tomato);
     burgIngs.push_back(burger);
@@ -144,12 +144,12 @@ void Restaurant::keyPressed(int key) {
     player->keyPressed(key);
     if(key == 's'){
         serveClient();
-        player->getBurger()->clear();
+        player->getBurger()->clear(); // deletes player's burger after attempted use
     }
-    if (key == 'u'){
+    if (key == 'u'){ // deletes last added ingredient to player's burger
         player->getBurger()->removeIngredient();
     }
-    if (key == 'e'){
+    if (key == 'e'){ // makes it so it costs one dollar to add an ingredient to the player's burger
         if (player->getInFrontOf() == true) {
             money -= 1;
         }

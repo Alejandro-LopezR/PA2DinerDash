@@ -5,7 +5,7 @@ void ofApp::setup(){
 	//States
 	menuState = new MenuState();
 	gameState = new GameState();
-	loseState = new LoseState();
+	loseState = new LoseState(); // added so these states can exist
 	winState = new WinState();
 	// Initial State
 	currentState = menuState;
@@ -26,7 +26,7 @@ void ofApp::update(){
 				currentState = menuState;
 			}else if(currentState->getNextState() == "Game"){
 				currentState = gameState;
-			}else if(currentState->getNextState() == "Lose"){
+			}else if(currentState->getNextState() == "Lose"){ // activates signaled state
 				currentState = loseState;
 			}else if(currentState->getNextState() == "Win"){
 				currentState = winState;

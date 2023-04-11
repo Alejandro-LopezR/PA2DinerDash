@@ -4,12 +4,12 @@ GameState::GameState() {
     this->restaurant = new Restaurant();
 }
 void GameState::tick() {
-	restaurant->tick();
-	if (restaurant->ofGetLoseCounter() >= 10) {
+	restaurant->tick(); 
+	if (restaurant->ofGetLoseCounter() >= 10) { // when 10 clients leave, lose state activated
 		setFinished(true);
 		setNextState("Lose");
 	}
-	if (restaurant->ofGetMoney() >= 100){
+	if (restaurant->ofGetMoney() >= 100){ // when money reaches 100, win state activated (good luck)
 		setFinished(true);
 		setNextState("Win");
 	}

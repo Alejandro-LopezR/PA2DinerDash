@@ -3,7 +3,7 @@
 #include "ofMain.h"
 #include "MenuState.h"
 #include "GameState.h"
-#include "LoseState.h"
+#include "LoseState.h" // added so states can exist
 #include "WinState.h"
 
 class ofApp : public ofBaseApp{
@@ -12,7 +12,7 @@ private:
 	State *currentState;
 	MenuState *menuState;
 	GameState *gameState;
-	LoseState *loseState;
+	LoseState *loseState; // added so states can exist
 	WinState *winState;
 	
 	ofSoundPlayer sound;

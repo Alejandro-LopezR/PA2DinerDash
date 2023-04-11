@@ -64,14 +64,14 @@ void Player::keyPressed(int key){
             }
         }
     }
-    if(key == OF_KEY_LEFT) {
+    if(key == OF_KEY_LEFT) { // Controlled movement of player to the left for the user
         if (x > 0) {
             x -= 15;
             facing = "left";
         }
     }
     if(key == OF_KEY_RIGHT) {
-        if (x + width < ofGetWidth()) {
+        if (x + width < ofGetWidth()) { // Controlled movement of player to the right for the user
             x += 15;
             facing = "right";
         }

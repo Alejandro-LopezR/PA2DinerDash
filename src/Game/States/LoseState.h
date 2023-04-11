@@ -1,5 +1,5 @@
 #pragma once
-
+// copied menu state structure
 #include "State.h"
 
 
@@ -13,5 +13,5 @@ class LoseState: public State{
 		void mousePressed(int x, int y, int button);
 		void keyReleased(int key);
 
-        ofImage gameOver;
+        ofImage gameOver; // when lose state activated shows this image
 };

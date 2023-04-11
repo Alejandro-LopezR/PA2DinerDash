@@ -1,6 +1,6 @@
 #include "LoseState.h"
 #include "State.h"
-
+// copied menu state structure with necessary changes
 LoseState::LoseState() {
     gameOver.load("images/Game-Over.jpg");
 }
