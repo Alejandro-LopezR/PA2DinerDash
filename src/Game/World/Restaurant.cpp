@@ -26,7 +26,7 @@ Restaurant::Restaurant() {
 
 }
 void Restaurant::initItems(){
-    ofImage burgerSpriteSheet, cheeseImg, lettuceImg, tomatoImg, burgerImg, botBreadImg, topBreadImg, plateImg;
+    ofImage burgerSpriteSheet, cheeseImg, lettuceImg, tomatoImg, burgerImg, botBreadImg, topBreadImg, plateImg, fireSpriteSheet, fireImg;
     burgerSpriteSheet.load("images/burger.png");
     topBreadImg.cropFrom(burgerSpriteSheet, 25, 16, 112, 43); // top bun
     burgerImg.cropFrom(burgerSpriteSheet, 30, 134, 103, 48); // patty
@@ -35,13 +35,15 @@ void Restaurant::initItems(){
     lettuceImg.cropFrom(burgerSpriteSheet, 161, 62, 117, 34); // lettuce
     botBreadImg.cropFrom(burgerSpriteSheet, 444, 270, 115, 39); // bottom bun
     plateImg.cropFrom(burgerSpriteSheet, 575, 263, 131, 51); // plate
-
+    fireSpriteSheet.load("images/fire.png"); // loads fire sprite
+    fireImg.cropFrom(fireSpriteSheet, 0, 0 ,1000, 1000); // fire to show that burger will be cooked
     cheese = new Item(cheeseImg, "cheese");
     lettuce = new Item(lettuceImg, "lettuce");
     tomato = new Item(tomatoImg, "tomato");
     burger = new Item(burgerImg, "patty");
     botBread = new Item(botBreadImg, "bottomBun");
     topBread = new Item(topBreadImg, "topBun");
+    fire = new Item(fireImg, "fire"); // fire item to use in "cooking" process
 }
 void Restaurant::initCounters(){
     int counterWidth = 96;
@@ -57,7 +59,7 @@ void Restaurant::initCounters(){
     breadCounterImg.cropFrom(counterSheet,0,63,34,56);//buns
     entityManager->addEntity(new BaseCounter(0,yOffset-16, counterWidth, 117, nullptr, plateCounterImg));
     entityManager->addEntity( new BaseCounter(counterWidth,yOffset-7, counterWidth,108, cheese, cheeseCounterImg));
-    entityManager->addEntity(new BaseCounter(counterWidth*2,yOffset, counterWidth, 102, burger, stoveCounterImg));
+    entityManager->addEntity(new StoveCounter(counterWidth*2,yOffset, counterWidth, 102, burger, stoveCounterImg)); // changed from BaseCounter class to StoveCounter class
     entityManager->addEntity(new BaseCounter(counterWidth*3, yOffset, counterWidth, 102, lettuce, lettuceCounterImg));
     entityManager->addEntity(new BaseCounter(counterWidth*4,yOffset, counterWidth, 102, nullptr, emptyCounterImg));
     entityManager->addEntity(new BaseCounter(counterWidth*5, yOffset -10, counterWidth, 113, tomato, tomatoCounterImg));

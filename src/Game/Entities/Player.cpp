@@ -42,9 +42,19 @@ void Player::render(){
 
 void Player::keyPressed(int key){
     if(key == 'e'){
-        BaseCounter* ac = getActiveCounter();
-        if(ac != nullptr){
-            Item* item = ac->getItem();
+        StoveCounter* asc = getActiveStoveCounter(); // copied process from active counter
+        BaseCounter* abc = getActiveCounter();
+        if(abc != nullptr){
+            Item* item = abc->getItem();
+            if(item != nullptr){
+                burger->addIngredient(item);
+                inFrontOf = true;
+            }
+            else {
+                inFrontOf = false;
+            }
+        } else if(asc != nullptr){ // copied process from active counter
+            Item* item = asc->getItem();
             if(item != nullptr){
                 burger->addIngredient(item);
                 inFrontOf = true;
@@ -70,6 +80,16 @@ void Player::keyPressed(int key){
 BaseCounter* Player::getActiveCounter(){
     for(Entity* e:entityManager->entities){
         BaseCounter* c = dynamic_cast<BaseCounter*>(e);
+        if(x + e->getWidth()/2 >= e->getX() && x +e->getWidth()/2 <e->getX() + e->getWidth()){
+            return c;
+        }
+    }
+    return nullptr;
+}
+
+StoveCounter* Player::getActiveStoveCounter(){ // copied getter for active counter
+    for(Entity* e:entityManager->entities){
+        StoveCounter* c = dynamic_cast<StoveCounter*>(e);
         if(x + e->getWidth()/2 >= e->getX() && x +e->getWidth()/2 <e->getX() + e->getWidth()){
             return c;
         }
